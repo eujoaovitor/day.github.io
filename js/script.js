@@ -40,3 +40,18 @@ setInterval(displayCurrentTime, 1000);
 
 // Exibe a hora atual imediatamente
 displayCurrentTime();
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 3 + 5 + 's'; // duração entre 5s e 8s
+    document.querySelector('.hearts').appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000); // remover o hearts após 8 segundos
+}
+
+// Aumentar a quantidade de hearts
+setInterval(createHeart, 150);
