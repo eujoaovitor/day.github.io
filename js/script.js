@@ -1,3 +1,4 @@
+/* ----- Script Slide ------ */
 let currentIndex = 0;
 
 function moveSlide() {
@@ -20,8 +21,9 @@ function autoSlide() {
 
 // Start automatic slide show
 setTimeout(autoSlide, 3000);
+/* ----- FIM - Script Slide ------ */
 
-
+/* ----- Script Date ------ */
 function displayCurrentTime() {
     const timeElement = document.getElementById('time');
     const currentDate = new Date();
@@ -40,7 +42,9 @@ setInterval(displayCurrentTime, 1000);
 
 // Exibe a hora atual imediatamente
 displayCurrentTime();
+/* ----- FIM - Script Date ------ */
 
+/* ----- Script Create Hearts ------ */
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
@@ -55,3 +59,5 @@ function createHeart() {
 
 // Aumentar a quantidade de hearts
 setInterval(createHeart, 150);
+
+/* ----- FIM - Script Create Hearts ------ */
