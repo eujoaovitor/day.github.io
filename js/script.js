@@ -54,7 +54,7 @@ function createHeart() {
 
     setTimeout(() => {
         heart.remove();
-    }, 10000); // remover o hearts após 8 segundos
+    }, 10000); // remover o hearts após segundos
 }
 
 // Aumentar a quantidade de hearts
