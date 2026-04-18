@@ -26,15 +26,27 @@ setTimeout(autoSlide, 3000);
 /* ----- Script Date ------ */
 function displayCurrentTime() {
     const timeElement = document.getElementById('time');
-    const currentDate = new Date();
-    
-    const hours = String(currentDate.getHours()).padStart(2, '0');
-    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
-    const seconds = String(currentDate.getSeconds()).padStart(2, '0');
-    
-    const formattedTime = `${hours} horas ${minutes} minutos ${seconds} segundos`;
-    
-    timeElement.innerHTML = `10 Meses, ${formattedTime}`;
+    const dataInicio = new Date('2023-10-12');
+    const hoje = new Date();
+
+    let anos = hoje.getFullYear() - dataInicio.getFullYear();
+    let meses = hoje.getMonth() - dataInicio.getMonth();
+    let dias = hoje.getDate() - dataInicio.getDate();
+
+    if (dias < 0) {
+        meses--;
+        const ultimoMes = new Date(hoje.getFullYear(), hoje.getMonth(), 0);
+        dias += ultimoMes.getDate();
+    }
+
+    if (meses < 0) {
+        anos--;
+        meses += 12;
+    }
+
+    const formattedTime = `${anos} anos ${meses} meses e ${dias} dias`;
+
+    timeElement.innerHTML = `${formattedTime}`;
 }
 
 // Atualiza a hora a cada segundo
